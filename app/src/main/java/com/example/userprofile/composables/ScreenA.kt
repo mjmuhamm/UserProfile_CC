@@ -16,7 +16,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.userprofile.UserViewModel
@@ -37,7 +36,7 @@ fun FirstScreen(navController: NavController, viewModel: UserViewModel) {
         Text("Please enter age", modifier = Modifier.padding(8.dp))
         TextField(value = age, onValueChange = { age = it } )
         Button(onClick = {
-            val user = UserDetails(name, email, age)
+            val user = UserDetails(name, email, age.toIntOrNull())
             viewModel.saveUser(user)
             navController.navigate("Next")
         }, modifier = Modifier.padding(8.dp)) {
