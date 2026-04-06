@@ -9,7 +9,7 @@ data class UserDetails(
 data class UserFormState(
     val name: String = "",
     val email: String = "",
-    val age: Int = 0,
+    val age: Int? = 0,
     val nameError: String? = null,
     val emailError: String? = null,
     val ageError: String? = null
